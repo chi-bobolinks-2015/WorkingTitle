@@ -32,6 +32,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'github_api'
+gem 'rest-client'
+gem 'octokit'
+
 gem 'rails_12factor', group: :production
 
 gem 'simplecov', :require => false, :group => :test
