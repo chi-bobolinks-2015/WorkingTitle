@@ -13,10 +13,13 @@ class GithubUser
   end
 
   def find_or_create
-    user = User.find_or_initialize_by(github_id: github_user.attrs.id)
-    user.update(name: github_user.attrs.name,
-                email: github_user.attrs.email,
+    user = User.find_or_initialize_by(github_id: github_user.id)
+    user.update(name: github_user.name,
+                email: github_user.email,
+                html_url: github_user.html_url,
+                avatar_url: github_user.avatar_url,
                 access_token: access_token)
+    user
   end
 
 end

@@ -5,10 +5,10 @@ class Api::SessionsController < ApplicationController
   end
 
   def callback
-    access_token = GithubAccessToken.new(github_code).access_token
+    access_token = GithubAccessToken.new(github_code).token
     user = GithubUser.new(access_token).user
     if user.save
-      render json: user
+      render json: user, status: 201
     else
       render json: { errors: user.errors.full_messages }
     end
