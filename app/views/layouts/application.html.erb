@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="sift">
 <head>
   <title>Sift</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -7,7 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <a href = "">Login Through Github</a>
+  <% if current_user %>
+    <a href="/api/logout">Logout</a>
+    <p>You are logged in! omgz!</p>
+    <!-- <button ng-click="login()">Login</button> -->
+  <% else %>
+    <a href="/api/login">Login</a>
+  <% end %>
 
 <%= yield %>
 
