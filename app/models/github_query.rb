@@ -3,14 +3,15 @@
 # require 'json'
 
 class GithubQuery
-attr_reader :github_client, :code_query_results
+attr_reader :github_client, :code_query_results, :user_id
 
-  def initialize
+  def initialize(user_id)
+    @user_id = user_id
     @github_client = request_github_client
   end
 
   def request_github_client
-    user = User.find(session[:id])
+    user = User.find(user_id)
     Octokit::Client.new(:access_token => user.access_token)
   end
 

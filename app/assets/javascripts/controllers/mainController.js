@@ -11,20 +11,21 @@ var app = angular.module('sift', []);
 //     });
 // }]);
 
-// app.controller("mainController", function($window, $scope, $http) {
-//   $scope.login = function(){
-//     var userAuth = $http.get('/api/login')
-//
-//     .success(function(userAuthData){
-//       // $scope.userAuth = userAuthData;
-//       // var deferred = $q.defer();
-//       // deferred.resolve(userAuthData);
-//       console.log(userAuthData);
-//       // $window.location.href = userAuthData["authorize_url"]
-//       // .then(function (response){
-//       //   console.log(response)
-//       // })
-//     })
-//   };
-//
-// });
+app.controller("mainController", function($scope, $http) {
+  // $scope.submitForm = function(){
+    var urls = $http.post('/search')
+
+    .success(function(urlData){
+      console.log("SUCCESSFUL")
+      $scope.urls = urlData;
+      // var deferred = $q.defer();
+      // deferred.resolve(userAuthData);
+      console.log(urlData);
+      // $window.location.href = userAuthData["authorize_url"]
+      // .then(function (response){
+      //   console.log(response)
+      // })
+    // })
+  };
+
+});
