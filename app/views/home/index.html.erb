@@ -6,9 +6,6 @@
     <div class="panel-body">
       <form class="form-inline">
         <div class="form-group">
-          <p>session: </p><%= session %>
-          <p>session id: <%= session[:id] %> </p>
-          <p>current user access token </p><%= current_user.access_token %>
           <br>
           <form ng-submit="submitForm()" ng-controller="mainController">
             <label>Search your repositories</label>
