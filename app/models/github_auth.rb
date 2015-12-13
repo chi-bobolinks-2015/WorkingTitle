@@ -7,7 +7,7 @@ class GithubAuth
   end
 
   def authorize
-    github.authorize_url(redirect_uri: 'http://localhost:3000/callback',
+    github.authorize_url(redirect_uri: 'http://localhost:3000/api/callback',
                           scope: 'user,repo')
   end
 end
