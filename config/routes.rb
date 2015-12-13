@@ -4,4 +4,5 @@ Rails.application.routes.draw do
     get 'login', :to => "sessions#login"
     get 'callback', :to => "sessions#callback"
   end
+    get '/', :to => "home#index"
 end
