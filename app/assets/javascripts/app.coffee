@@ -1,0 +1,1 @@
+sift = angular.module('sift', []);
