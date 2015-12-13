@@ -10,7 +10,8 @@ attr_reader :github_client, :code_query_results
   end
 
   def request_github_client
-    client = Octokit::Client.new(:access_token => access_token)
+    user = User.find(session[:id])
+    Octokit::Client.new(:access_token => user.access_token)
   end
 
   def user_code_search(string)
@@ -23,9 +24,6 @@ attr_reader :github_client, :code_query_results
       hash = Hash.new
       hash[:url] = item.html_url
       urls << hash
-    end
-    urls.each do |item|
-      item
     end
     urls
   end
