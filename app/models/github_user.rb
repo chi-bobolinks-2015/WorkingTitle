@@ -12,19 +12,11 @@ class GithubUser
     client.user
   end
 
-  def find_or_create(github_user)
-    user = User.find_by(github_id: github_user.attrs.id)
-
-    if user
-      user = user.update(name: github_user.attrs.name,
-                  email: github_user.attrs.email,
-                  access_token: access_token)
-    else
-      user = User.new(github_id: github_user.attrs.id,
-                      name: github_user.attrs.name,
-                      email: github_user.attrs.email,
-                      access_token: access_token)
-    end
+  def find_or_create
+    user = User.find_or_initialize_by(github_id: github_user.attrs.id)
+    user.update(name: github_user.attrs.name,
+                email: github_user.attrs.email,
+                access_token: access_token)
   end
 
 end
