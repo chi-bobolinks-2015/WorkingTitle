@@ -13,7 +13,7 @@ var app = angular.module('sift', []);
 
 app.controller("mainController", function($scope, $http) {
   // $scope.submitForm = function(){
-    var urls = $http.post('/search')
+    var urls = $http.get('/api/search')
 
     .success(function(urlData){
       console.log("SUCCESSFUL")
@@ -26,6 +26,6 @@ app.controller("mainController", function($scope, $http) {
       //   console.log(response)
       // })
     // })
-  };
+  });
 
 });

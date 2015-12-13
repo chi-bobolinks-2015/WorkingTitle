@@ -8,13 +8,18 @@
         <div class="form-group">
           <p>session: </p><%= session %>
           <p>session id: <%= session[:id] %> </p>
-          <p>current user access token </p><%= current_user.access_token %>
           <br>
-          <form ng-submit="submitForm()" ng-controller="mainController">
-            <label>Search your repositories</label>
-            <input type="text" placeholder="Enter keywords" ng-model="keyword">
-            <input type="submit" value="Submit">
-          </form>
+          <h1>urls</h1>
+          <div ng-controller="mainController">
+            <div ng-repeat ="urlCollection in urls">
+              <div ng-repeat="urlObjects in urlCollection">
+                <div ng-repeat="url in urlObjects">
+                  <p>
+                    {{url}}
+                  </p>
+                </div>
+              </div>
+            </div>
         </div>
       </form>
     </div>
