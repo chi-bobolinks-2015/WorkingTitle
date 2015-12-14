@@ -1,0 +1,8 @@
+<h1>Welcome to your profile page, <%= @user.name %></h1>
+<% @collections.each do |collection| %>
+  <p><%= collection.name %></p>
+<% end %>
+
+<% @code_snippets.each do |code_snippet| %>
+  <p><%= code_snippet.code_url %></p>
+<% end %>
