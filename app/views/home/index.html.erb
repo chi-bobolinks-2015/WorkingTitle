@@ -3,6 +3,15 @@
     <div class="panel-heading">
       <h1>Welcome to Sift</h1>
     </div>
+    <div class="left_side_nav">
+      <div ng-controller="mainController">
+        <div ng-repeat="orgCollection in orgs">
+          <div ng-repeat="org in orgCollection">
+            {{org}}
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="panel-body">
       <form ng-submit="submit()" >
         <label>Search by keyword</label>
