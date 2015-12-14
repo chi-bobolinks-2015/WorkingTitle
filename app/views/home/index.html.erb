@@ -13,6 +13,14 @@
       </div>
     </div>
     <div class="panel-body">
+      <form ng-submit="submitCollection()">
+        <label>Start a Collection!</label>
+        <input type="text" placeholder="Collection Name" ng-model="collection">
+        <input type="submit" value="Submit" ng-click="showSearchForm = false">
+      </form>
+      <form ng-hide="showSearchForm" ng-submit="submit()" >
+        <label>Search your repositories</label>
+        <input type="text" placeholder="Enter keywords" ng-model="keyword">
       <form ng-submit="submit()" >
         <label>Search by keyword</label>
         <input type="text" placeholder="Enter keywords" ng-model="keyword"><br>
@@ -27,7 +35,11 @@
           <div ng-repeat="urlObjects in urlCollection">
             <div ng-repeat="url in urlObjects">
               <p>
-                {{url}}
+                <form id="save-url" action="/user" method="post">
+                  <label>{{url}}</label>
+
+                  <input type="submit" value="Save">
+                </form>
               </p>
             </div>
           </div>
