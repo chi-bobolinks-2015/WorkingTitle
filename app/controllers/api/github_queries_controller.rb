@@ -8,4 +8,9 @@ class Api::GithubQueriesController < ApplicationController
     render json: client.query_to_json(urls)
   end
 
+  def repositories
+    client = GithubQuery.new(session[:id])
+    repositories = client.repository_search
+    render json: { repositories: repositories }
+  end
 end

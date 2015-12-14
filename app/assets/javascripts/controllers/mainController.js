@@ -7,9 +7,10 @@ var app = angular.module('sift', []);
         $scope.urls = urlData
       })
     }
-
-  var organizations = $http.get('/api/organizations')
-    .success(function(organizations){
-      $scope.orgs = organizations
-    })
+    $scope.populateRepositories = function(){
+      var repositories = $http.get('/api/repositories')
+      .success(function(repositories){
+        $scope.repositories = repositories
+      })
+    }
   }])
