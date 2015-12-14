@@ -14,17 +14,21 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
-
-<body class="container-fluid">
-  <% if current_user %>
-    <a href="/api/logout">Logout</a>
-    <p>You are logged in! omgz!</p>
-    <!-- <button ng-click="login()">Login</button> -->
-  <% else %>
-    <a href="/api/login">Login</a>
-  <% end %>
-
-<%= yield %>
-
+<body>
+  <nav class="navbar">
+    <% if current_user %>
+      <a class="navbar-link" href="/api/logout">Logout</a>
+      <p>You are logged in!</p>
+      <!-- <button ng-click="login()">Login</button> -->
+    <% else %>
+      <a class="navbar-link" href="/api/login">Login</a>
+    <% end %>
+    <div class="navbar-header">
+      <h1 class="navbar-brand">Sift</h1>
+    </div>
+  </nav>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
