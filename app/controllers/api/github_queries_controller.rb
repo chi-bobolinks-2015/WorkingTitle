@@ -3,7 +3,7 @@ class Api::GithubQueriesController < ApplicationController
 
   def index
     client = GithubQuery.new(session[:id])
-    client.user_code_search("factory_girl")
+    client.user_code_search(params[:keyword])
     urls = client.search_output_urls
     render json: client.query_to_json(urls)
   end

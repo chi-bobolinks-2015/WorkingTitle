@@ -1,19 +1,25 @@
-<div>
+<div ng-controller="mainController">
   <div class="panel panel-success">
     <div class="panel-heading">
       <h1>Welcome to Sift</h1>
     </div>
     <div class="panel-body">
-      <form class="form-inline">
-        <div class="form-group">
-          <br>
-          <form ng-submit="submitForm()" ng-controller="mainController">
-            <label>Search your repositories</label>
-            <input type="text" placeholder="Enter keywords" ng-model="keyword">
-            <input type="submit" value="Submit">
-          </form>
-        </div>
+      <form ng-submit="submit()" >
+        <label>Search your repositories</label>
+        <input type="text" placeholder="Enter keywords" ng-model="keyword">
+        <input type="submit" value="Submit">
       </form>
+      <div ng-controller="mainController">
+        <div ng-repeat ="urlCollection in urls">
+          <div ng-repeat="urlObjects in urlCollection">
+            <div ng-repeat="url in urlObjects">
+              <p>
+                {{url}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
