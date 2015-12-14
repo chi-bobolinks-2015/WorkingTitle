@@ -1,4 +1,4 @@
-<div class="container" ng-controller="mainController">
+<div ng-controller="mainController">
   <div class="panel panel-success">
     <div class="panel-heading">
       <h1>Welcome to Sift</h1>
@@ -6,21 +6,27 @@
     <div class="left_side_nav">
       <div ng-controller="mainController">
         <div ng-repeat="orgCollection in orgs">
+
           <div ng-repeat="org in orgCollection">
             {{org}}
           </div>
+
         </div>
       </div>
     </div>
+
     <div class="panel-body">
       <form ng-submit="submitCollection()">
         <label>Start a Collection!</label>
         <input type="text" placeholder="Collection Name" ng-model="collection">
         <input type="submit" value="Submit" ng-click="showSearchForm = false">
       </form>
+
       <form ng-hide="showSearchForm" ng-submit="submit()" >
         <label>Search your repositories</label>
         <input type="text" placeholder="Enter keywords" ng-model="keyword">
+      </form>
+
       <form ng-submit="submit()" >
         <label>Search by keyword</label>
         <input type="text" placeholder="Enter keywords" ng-model="keyword"><br>
@@ -30,16 +36,18 @@
         <input type="checkbox" ng-model="checkboxModel.controller" value="app/controllers">Controller<br>
         <input type="submit" value="Submit">
       </form>
+
       <div ng-controller="mainController">
         <div ng-repeat ="urlCollection in urls">
           <div ng-repeat="urlObjects in urlCollection">
             <div ng-repeat="url in urlObjects">
               <p>
+
                 <form id="save-url" action="/user" method="post">
                   <label>{{url}}</label>
-
                   <input type="submit" value="Save">
                 </form>
+
               </p>
             </div>
           </div>
