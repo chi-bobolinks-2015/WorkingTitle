@@ -2,14 +2,13 @@
   <div class="jumbotron">
     <h1>Welcome to Sift</h1>
   </div>
-  <div class="left_side_nav">
-    <div ng-controller="mainController">
 
-    <div class="navbar-left">
+    <div id="navbar-left" class="navbar-left">
       <form ng-submit="populateRepositories()">
-        <label>Populate your Repositories</label>
-        <input type="submit" value="Submit">
+        <h4>Your Repositories</h4>
+        <input class="btn btn-default" type="submit" value="Populate!">
       </form>
+
       <div ng-controller="mainController">
         <div ng-repeat="repoCollection in repositories">
           <div ng-repeat="repository in repoCollection">
@@ -17,6 +16,12 @@
           </div>
         </div>
       </div>
+      <!-- <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> -->
     </div>
 
   <div id="about">
@@ -72,6 +77,5 @@
     </div>
 
   </div>
-
 
 </div>
