@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20151214011800) do
 
   create_table "code_snippets", force: :cascade do |t|
     t.string   "code_url"
+    t.text     "code_content"
     t.integer  "collection_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

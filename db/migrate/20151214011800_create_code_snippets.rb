@@ -2,6 +2,7 @@ class CreateCodeSnippets < ActiveRecord::Migration
   def change
     create_table :code_snippets do |t|
       t.string :code_url
+      t.text   :code_content
       t.integer :collection_id
 
       t.timestamps null: false
