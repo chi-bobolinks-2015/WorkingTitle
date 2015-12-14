@@ -4,13 +4,15 @@
       <h1>Welcome to Sift</h1>
     </div>
     <div class="left_side_nav">
+      <form ng-submit="populateRepositories()">
+        <label>Populate your Repositories</label>
+        <input type="submit" value="Submit">
+      </form>
       <div ng-controller="mainController">
-        <div ng-repeat="orgCollection in orgs">
-
-          <div ng-repeat="org in orgCollection">
-            {{org}}
+        <div ng-repeat="repoCollection in repositories">
+          <div ng-repeat="repository in repoCollection">
+            {{repository}}
           </div>
-
         </div>
       </div>
     </div>
