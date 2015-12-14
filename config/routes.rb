@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     get 'search', :to => "github_queries#index"
   end
     get '/', :to => "home#index", as: "home"
+    get '/users/:id', :to => "users#show"
     post 'collections', :to => "collections#create"
+
 end
