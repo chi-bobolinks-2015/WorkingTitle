@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
     get '/', :to => "home#index", as: "home"
     get '/users/:id', :to => "users#show"
+    post 'collections', :to => "collections#create"
+
 end
