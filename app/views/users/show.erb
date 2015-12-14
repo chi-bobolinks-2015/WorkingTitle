@@ -1,4 +1,5 @@
 <h1>Welcome to your profile page, <%= @user.name %></h1>
+<%= image_tag @user.avatar_url %>
 <% @collections.each do |collection| %>
   <p><%= collection.name %></p>
   <% collection.code_snippets.each do |code|%>
