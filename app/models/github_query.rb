@@ -11,9 +11,23 @@ attr_reader :github_client, :code_query_results, :user_id, :user
     Octokit::Client.new(:access_token => user.access_token, auto_traversal: true, per_page: 100)
   end
 
-  def user_code_search(string)
+  def user_code_search(string, *path)
     Octokit.auto_paginate = true
-    @code_query_results = github_client.search_code("#{string} user:#{github_client.login}", options = {})
+    if path.length > 0
+      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} user:#{github_client.login}", options = {})
+    else
+      @code_query_results = github_client.search_code("#{string} user:#{github_client.login}", options = {})
+    end
+  end
+
+  def repo_code_search(string, repo, *path)
+    Octokit.auto_paginate = true
+    if path.length > 0
+      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} repo:#{repo}", options = {})
+    else
+      # debugger
+      @code_query_results = github_client.search_code("#{string} repo:#{repo}", options = {})
+    end
   end
 
   def org_code_search(string)
