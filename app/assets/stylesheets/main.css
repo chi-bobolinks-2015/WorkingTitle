@@ -1,6 +1,18 @@
+body {
+  height: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+#container {
+  width: 100%;
+}
+
 #about {
   text-align: center;
-  padding: 4em 0 2em 0;
+  padding: 4em 1em 4em 1em;
 }
 
 #about h3 {
@@ -12,13 +24,23 @@
   font-size: 1.5em;
 }
 
+#navbar-left {
+  position: relative;
+  text-align: justify;
+  margin: 1em;
+}
+
 form#create-collection {
   line-height: 3em;
   margin-bottom: .5em;
 }
 
 div#populate-repos {
-  margin-bottom: 4em;
+  width: 556px;
+  height: 580px;
+  overflow-y: scroll;
+  border: 1px solid black;
+  margin-top: .5em;
 }
 
 div#repo-search {
@@ -41,22 +63,14 @@ span#copyright {
   line-height: 2em;
 }
 
-#navbar-left {
-  position: absolute;
-  text-align: justify;
-  left: 0;
-  top: 6em;
-  margin: .5em;
-  padding: 0 0 0 1em;
-  height: 100%;
-}
-
 div#search-function {
   position: relative;
-  left: 36%;
+  left: 3em;
 }
 
 #footer {
-  position: fixed;
-  bottom: 0%;
+  position: relative;
+  clear: both;
+  bottom: 0;
+  margin-top: .5em;
 }
