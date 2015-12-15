@@ -1,0 +1,38 @@
+#about {
+  text-align: center;
+  padding: 4em 0 2em 0;
+}
+
+#about h3 {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+#about p {
+  font-size: 1.5em;
+}
+
+form#create-collection {
+  line-height: 3em;
+  margin-bottom: .5em;
+}
+
+div#repo-search {
+  line-height: 3em;
+}
+
+div#keyword-search {
+  line-height: 3em;
+}
+
+div#mvc {
+  padding-top: 1em;
+  word-spacing: .3em;
+}
+
+span#copyright {
+  float: right;
+  margin: 0 .5em 0 0;
+  font-size: .7em;
+  line-height: 2em;
+}
