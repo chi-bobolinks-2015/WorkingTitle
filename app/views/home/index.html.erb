@@ -10,9 +10,11 @@
       </form>
 
       <div ng-controller="mainController">
-        <div ng-repeat="repoCollection in repositories">
-          <div ng-repeat="repository in repoCollection">
-            {{repository}}
+        <div id="populate-repos">
+          <div ng-repeat="repoCollection in repositories">
+            <div ng-repeat="repository in repoCollection">
+              {{repository}}
+            </div>
           </div>
         </div>
       </div>
