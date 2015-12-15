@@ -1,5 +1,3 @@
-require 'base64'
-
 class GithubQuery
 attr_reader :github_client, :user_id, :user
 
@@ -76,6 +74,7 @@ attr_reader :github_client, :user_id, :user
   end
 
   def decoder(string)
+    require 'base64'
     Base64.decode64(string)
   end
 
