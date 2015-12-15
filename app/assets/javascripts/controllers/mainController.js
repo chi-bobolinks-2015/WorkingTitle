@@ -21,10 +21,10 @@ var app = angular.module('sift', []);
           $scope.newCollectionID = createCollection.id;
         })
     }
-    $scope.saveLink = function() {
-      // console.log({ codeSnippet: {codeUrl: $scope.linkUrl, collectionId: $scope.newCollectionID }  })
-      console.log($scope)
-      var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: $scope.linkUrl, collectionId: $scope.newCollectionID }  } )
+    $scope.saveLink = function(selectedUrl) {
+      console.log({ codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID }  })
+      // console.log($scope)
+      var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
         })
