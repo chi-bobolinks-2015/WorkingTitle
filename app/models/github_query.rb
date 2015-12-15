@@ -1,5 +1,7 @@
+require 'base64'
+
 class GithubQuery
-attr_reader :github_client, :code_query_results, :user_id, :user
+attr_reader :github_client, :user_id, :user
 
   def initialize(user_id)
     @user_id = user_id
@@ -14,26 +16,25 @@ attr_reader :github_client, :code_query_results, :user_id, :user
   def user_code_search(string, *path)
     Octokit.auto_paginate = true
     if path.length > 0
-      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} user:#{github_client.login}", options = {})
+      github_client.search_code("#{string} path:app/#{path[0]} user:#{github_client.login}", options = {})
     else
-      @code_query_results = github_client.search_code("#{string} user:#{github_client.login}", options = {})
+      github_client.search_code("#{string} user:#{github_client.login}", options = {})
     end
   end
 
   def repo_code_search(string, repo, *path)
     Octokit.auto_paginate = true
     if path.length > 0
-      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} repo:#{repo}", options = {})
+      github_client.search_code("#{string} path:app/#{path[0]} repo:#{repo}", options = {})
     else
-      # debugger
-      @code_query_results = github_client.search_code("#{string} repo:#{repo}", options = {})
+      github_client.search_code("#{string} repo:#{repo}", options = {})
     end
   end
-
-  def org_code_search(string)
-    Octokit.auto_paginate = true
-    github_client.search
-  end
+  #
+  # def org_code_search(string)
+  #   Octokit.auto_paginate = true
+  #   github_client.search
+  # end
 
   def repository_search
     Octokit.auto_paginate = true
@@ -47,18 +48,38 @@ attr_reader :github_client, :code_query_results, :user_id, :user
     end
     repositories
   end
+  #
+  # def search_output_urls
+  #   urls = []
+  #   code_query_results.items.each do |item|
+  #     hash = Hash.new
+  #     hash[:url] = item.html_url
+  #     urls << hash
+  #   end
+  #   urls
+  # end
 
-  def search_output_urls
-    urls = []
-    code_query_results.items.each do |item|
+  def format_search(repo_object)
+    search_results = []
+    repo_object.items.each do |item|
       hash = Hash.new
+      hash[:path] = item.path
       hash[:url] = item.html_url
-      urls << hash
+      hash[:git_url] = item.git_url
+      search_results << hash
     end
-    urls
+    search_results
   end
 
-  def query_to_json(search_output_urls)
-    {search_output_urls: search_output_urls}.to_json
+  def get_request(url)
+    github_client.get(url)
   end
+
+  def decoder(string)
+    Base64.decode64(string)
+  end
+
+  # def query_to_json(search_output_urls)
+  #   {search_output_urls: search_output_urls}.to_json
+  # end
 end
