@@ -1,1 +1,6 @@
-<h1>This is your <%= @collection.name %> collection</h1>
+<h1>Collection: <%= @collection.name %></h1>
+<% @code_snippets.each do |code_snippet| %>
+  <p><h3>Github Url: </h3><%= code_snippet.code_url %></p>
+  <p><h3>Code Content: </h3><%= code_snippet.code_content %></p>
+  <br>
+<% end %>
