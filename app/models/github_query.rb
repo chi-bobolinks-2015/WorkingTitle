@@ -42,11 +42,13 @@ attr_reader :github_client, :user_id, :user
   def format_search(repo_object)
     search_results = []
     repo_object.items.each do |item|
-      hash = Hash.new
-      hash[:path] = item.path
-      hash[:raw_code] = get_request(item.git_url)
-      hash[:url] = item.html_url
-      search_results << hash
+      if item.path !~ /\/\./
+        hash = Hash.new
+        hash[:path] = item.path
+        hash[:raw_code] = get_request(item.git_url)
+        hash[:url] = item.html_url
+        search_results << hash
+      end
     end
     search_results
   end
