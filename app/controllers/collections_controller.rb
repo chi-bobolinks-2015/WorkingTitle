@@ -7,6 +7,11 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def show
+    @collection = Collection.find(params[:id])
+    @code_snippets = CodeSnippet.where(collection_id: params[:id])
+  end
+
   private
 
   def collection_params
