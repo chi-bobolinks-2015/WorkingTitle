@@ -4,7 +4,8 @@ Rails.application.routes.draw do
     get 'login', :to => "sessions#login"
     get 'callback', :to => "sessions#callback"
     get 'logout', :to => "sessions#logout"
-    get 'search', :to => "github_queries#index"
+    get 'search', :to => "github_queries#query"
+    # get 'search', :to => "github_queries#index"
     get 'repositories', :to => "github_queries#repositories"
   end
     get '/', :to => "home#index", as: "home"

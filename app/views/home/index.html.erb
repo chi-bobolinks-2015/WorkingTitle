@@ -43,20 +43,22 @@
         <h4>Search by keyword:</h4>
         <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
         <div id="mvc">
-          <label><input type="checkbox" ng-model="checkboxModel.model" value="app/models"> Model</label>
-          <label><input type="checkbox" ng-model="checkboxModel.view" value="app/views"> View</label>
-          <label><input type="checkbox" ng-model="checkboxModel.controller" value="app/controllers"> Controller</label>
+          <label><input type="checkbox" ng-model="checkboxModel.models" value="app/models"> Model</label>
+          <label><input type="checkbox" ng-model="checkboxModel.views" value="app/views"> View</label>
+          <label><input type="checkbox" ng-model="checkboxModel.controllers" value="app/controllers"> Controller</label>
           <input class="btn btn-default" type="submit" value="Submit">
         </div>
       </form>
     </div>
     <div ng-controller="mainController">
-      <div ng-repeat ="urlCollection in urls">
-        <div ng-repeat="urlObjects in urlCollection">
-          <div ng-repeat="url in urlObjects">
+      <div ng-repeat ="searchCollection in searchResults">
+        <div ng-repeat="searchObject in searchCollection">
+          <div ng-repeat="(key, value) in searchObject" >
             <p>
               <input type="hidden" ng-model="url">
-              <label>{{url}}</label>
+              <label>{{key }}: {{value}}</label>
+              <br>
+              <br>
               <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
             </p>
           </div>
