@@ -16,7 +16,7 @@
 
 <% if current_user %>
 
-  <div id="navbar-left" class="navbar-left">
+<!--   <div id="navbar-left" class="navbar-left">
     <form ng-submit="populateRepositories()">
       <h4>Your Repositories</h4>
       <input class="btn btn-default" type="submit" value="Populate!">
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div id="search-function">
     <form id="create-collection" ng-submit="submitCollection()">
@@ -43,23 +43,25 @@
         <h4>Search by keyword:</h4>
         <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
         <div id="mvc">
-          <label><input type="checkbox" ng-model="checkboxModel.model" value="app/models"> Model</label>
-          <label><input type="checkbox" ng-model="checkboxModel.view" value="app/views"> View</label>
-          <label><input type="checkbox" ng-model="checkboxModel.controller" value="app/controllers"> Controller</label>
+          <label><input type="checkbox" ng-model="checkboxModel.models" value="app/models"> Model</label>
+          <label><input type="checkbox" ng-model="checkboxModel.views" value="app/views"> View</label>
+          <label><input type="checkbox" ng-model="checkboxModel.controllers" value="app/controllers"> Controller</label>
           <input class="btn btn-default" type="submit" value="Submit">
         </div>
       </form>
     </div>
     <div ng-controller="mainController">
-      <div ng-repeat ="urlCollection in urls">
-        <div ng-repeat="urlObjects in urlCollection">
-          <div ng-repeat="url in urlObjects">
-            <p>
-              <input type="hidden" ng-model="url">
-              <label>{{url}}</label>
-              <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
-            </p>
-          </div>
+      <div ng-repeat ="searchCollection in searchResults">
+        <div ng-repeat="searchResult in searchCollection">
+          <p>
+            <input type="hidden" ng-model="url">
+            <p>Path: {{searchResult.path}}</p>
+            <p>Path: {{searchResult.url}}</p>
+            <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
+            <pre class="codeDisplay"><code>
+              <label>{{searchResult.raw_code}}</label>
+            </code></pre>
+          </p>
         </div>
       </div>
     </div>
