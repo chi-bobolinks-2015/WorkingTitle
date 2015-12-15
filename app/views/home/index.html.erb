@@ -52,18 +52,16 @@
     </div>
     <div ng-controller="mainController">
       <div ng-repeat ="searchCollection in searchResults">
-        <div ng-repeat="searchObject in searchCollection">
-          <div ng-repeat="(key, value) in searchObject" >
-            <p>
-              <input type="hidden" ng-model="url">
-              <pre><code>
-                <label>{{key }}: {{value}}</label>
-              </code></pre>
-              <br>
-              <br>
-              <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
-            </p>
-          </div>
+        <div ng-repeat="searchResult in searchCollection">
+          <p>
+            <input type="hidden" ng-model="url">
+            <p>Path: {{searchResult.path}}</p>
+            <p>Path: {{searchResult.url}}</p>
+            <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
+            <pre class="codeDisplay"><code>
+              <label>{{searchResult.raw_code}}</label>
+            </code></pre>
+          </p>
         </div>
       </div>
     </div>

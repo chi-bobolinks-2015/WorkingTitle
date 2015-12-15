@@ -74,3 +74,8 @@ div#search-function {
   bottom: 0;
   margin-top: .5em;
 }
+
+.codeDisplay{
+  width: 60%;
+
+}
