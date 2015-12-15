@@ -18,18 +18,19 @@ var app = angular.module('sift', []);
     $scope.submitCollection = function() {
       var createCollection = $http.post('/collections.json', { collection: {collectionName: $scope.collection } } )
         .success(function(createCollection){
-          console.log(createCollection)
           $scope.newCollectionID = createCollection.id;
-          console.log($scope.newCollectionID)
         })
-      $scope.showCollectionForm = false;
+    }
+    $scope.saveLink = function() {
+      // console.log({ codeSnippet: {codeUrl: $scope.linkUrl, collectionId: $scope.newCollectionID }  })
+      console.log($scope)
+      var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: $scope.linkUrl, collectionId: $scope.newCollectionID }  } )
+        .success(function(createSnippet){
+          $scope.snippet = createSnippet
+        })
     }
 
-    $scope.showCollectionForm = function() {
-      $scope.showCollectionForm = true;
-    }
-
-    $scope.showSearchForm = function() {
-      $scope.showSearchForm = true;
+    $scope.showSearchInfo = function() {
+      $scope.showSearchInfo = true;
     }
   }])
