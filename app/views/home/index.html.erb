@@ -3,24 +3,6 @@
     <h1>Welcome to sift</h1>
   </div>
 
-    <div id="navbar-left" class="navbar-left">
-      <form ng-submit="populateRepositories()">
-        <h4>Your Repositories</h4>
-        <input class="btn btn-default" type="submit" value="Populate!">
-      </form>
-
-      <div ng-controller="mainController">
-        <div id="populate-repos">
-          <div ng-repeat="repoCollection in repositories">
-            <div ng-repeat="repository in repoCollection">
-              {{repository}}
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
   <div id="about">
     <div class="row">
       <div class="col-md-6"><h3>What is sift?</h3></div>
@@ -32,15 +14,30 @@
     </div>
   </div>
 
+  <div id="navbar-left" class="navbar-left">
+    <form ng-submit="populateRepositories()">
+      <h4>Your Repositories</h4>
+      <input class="btn btn-default" type="submit" value="Populate!">
+    </form>
+    <div ng-controller="mainController">
+      <div id="populate-repos">
+        <div ng-repeat="repoCollection in repositories">
+          <div ng-repeat="repository in repoCollection">
+            {{repository}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <% if current_user %>
 
-  <div id="search-function" class="panel-body">
+  <div id="search-function">
     <form id="create-collection" ng-submit="submitCollection()">
       <h4>Start a Collection:</h4>
       <input class="form-control" type="text" placeholder="Collection Name" ng-model="collection">
       <input class="btn btn-default" type="submit" value="Submit" ng-click="showSearchInfo = false">
     </form>
-
     <div ng-hide="showSearchInfo">
       <form id="keyword-search" ng-submit="submit()" >
         <h4>Search by keyword:</h4>
@@ -53,20 +50,17 @@
         </div>
       </form>
     </div>
-
     <div ng-controller="mainController">
       <div ng-repeat ="searchCollection in searchResults">
         <div ng-repeat="searchObject in searchCollection">
           <div ng-repeat="(key, value) in searchObject" >
-
             <p>
               <input type="hidden" ng-model="url">
               <label>{{key }}: {{value}}</label>
               <br>
               <br>
-              <button ng-click="saveLink(url)">Save</button>
+              <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
             </p>
-
           </div>
         </div>
       </div>
