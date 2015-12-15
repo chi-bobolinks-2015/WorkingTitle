@@ -1,5 +1,20 @@
 body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #DDDAD6;
   height: 100%;
+}
+
+.navbar a {
+  color: #AADDCB;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #4AA182;
+  text-decoration: none;
 }
 
 html {
@@ -8,6 +23,7 @@ html {
 
 #container {
   width: 100%;
+  padding: 4em;
 }
 
 #about {
@@ -72,10 +88,9 @@ div#search-function {
   position: relative;
   clear: both;
   bottom: 0;
-  margin-top: .5em;
+  margin-top: 2em;
 }
 
-.codeDisplay{
+.codeDisplay {
   width: 60%;
-
 }
