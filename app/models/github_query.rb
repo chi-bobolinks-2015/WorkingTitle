@@ -48,6 +48,7 @@ attr_reader :github_client, :user_id, :user
         hash[:raw_code] = get_request(item.git_url)
         hash[:url] = item.html_url
         search_results << hash
+        break if search_results.length == 10
       end
     end
     search_results
