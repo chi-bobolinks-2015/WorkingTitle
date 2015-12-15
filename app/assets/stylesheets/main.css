@@ -1,6 +1,6 @@
 #about {
   text-align: center;
-  padding: 4em 0 2em 0;
+  padding: 5em 1em 5em 1em;
 }
 
 #about h3 {
@@ -53,7 +53,8 @@ span#copyright {
 
 div#search-function {
   position: relative;
-  left: 36%;
+  left: 25%;
+  margin: 3em 0 4em 0;
 }
 
 #footer {
