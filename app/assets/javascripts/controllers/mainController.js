@@ -7,6 +7,14 @@ var app = angular.module('sift', []);
         $scope.urls = urlData
       })
     }
+
+    $scope.populateRepositories = function(){
+      var repositories = $http.get('/api/repositories')
+      .success(function(repositories){
+        $scope.repositories = repositories
+      })
+    }
+
     $scope.submitCollection = function() {
       var createCollection = $http.post('/collections.json', { collection: {collectionName: $scope.collection } } )
         .success(function(createCollection){
@@ -25,9 +33,4 @@ var app = angular.module('sift', []);
     $scope.showSearchInfo = function() {
       $scope.showSearchInfo = true;
     }
-
-  var organizations = $http.get('/api/organizations')
-    .success(function(organizations){
-      $scope.orgs = organizations
-    })
   }])

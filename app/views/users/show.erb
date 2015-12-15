@@ -1,7 +1,12 @@
-<h1>Welcome to your profile page, <%= @user.name %></h1>
-<% @collections.each do |collection| %>
-  <p><%= collection.name %></p>
-  <% collection.code_snippets.each do |code|%>
-    <p><%= code.code_url %></p>
+<div>
+  <h1>Welcome to your profile page, <%= @user.name %></h1>
+
+  <div id="gh-avatar"><%= image_tag @user.avatar_url %></div>
+
+  <div id="profile-collections">
+    <% @collections.each do |collection| %>
+      <h4><%= collection.name %></h4>
+      <!-- make above links to collection show -->
     <% end %>
-<% end %>
+  </div>
+</div>

@@ -284,10 +284,6 @@ th {
 .glyphicon-plus:before {
   content: "\002b";
 }
-.glyphicon-euro:before,
-.glyphicon-eur:before {
-  content: "\20ac";
-}
 .glyphicon-minus:before {
   content: "\2212";
 }
@@ -1014,24 +1010,6 @@ th {
 .glyphicon-text-background:before {
   content: "\e243";
 }
-.glyphicon-object-align-top:before {
-  content: "\e244";
-}
-.glyphicon-object-align-bottom:before {
-  content: "\e245";
-}
-.glyphicon-object-align-horizontal:before {
-  content: "\e246";
-}
-.glyphicon-object-align-left:before {
-  content: "\e247";
-}
-.glyphicon-object-align-vertical:before {
-  content: "\e248";
-}
-.glyphicon-object-align-right:before {
-  content: "\e249";
-}
 .glyphicon-triangle-right:before {
   content: "\e250";
 }
@@ -1043,15 +1021,6 @@ th {
 }
 .glyphicon-triangle-top:before {
   content: "\e253";
-}
-.glyphicon-console:before {
-  content: "\e254";
-}
-.glyphicon-superscript:before {
-  content: "\e255";
-}
-.glyphicon-subscript:before {
-  content: "\e256";
 }
 .glyphicon-menu-left:before {
   content: "\e257";
@@ -2551,7 +2520,7 @@ output {
 }
 .form-control {
   display: block;
-  width: 100%;
+  width: 20%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -4981,11 +4950,11 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  padding: 2em 0 2em 0;
+  margin: 2em 0 5em 0;
   color: inherit;
-  background-color: #eee;
+  background-color: #DDDAD6;
+  text-align: center;
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -5010,13 +4979,13 @@ a.badge:focus {
 }
 @media screen and (min-width: 768px) {
   .jumbotron {
-    padding-top: 48px;
-    padding-bottom: 48px;
+    padding-top: 4em;
+    padding-bottom: 4em;
   }
   .container .jumbotron,
   .container-fluid .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 3em;
+    padding-left: 3em;
   }
   .jumbotron h1,
   .jumbotron .h1 {
@@ -5050,7 +5019,7 @@ a.thumbnail.active {
   color: #333;
 }
 .alert {
-  padding: 15px;
+  padding: 4px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -5084,6 +5053,7 @@ a.thumbnail.active {
   color: #3c763d;
   background-color: #dff0d8;
   border-color: #d6e9c6;
+  font-size: .5em;
 }
 .alert-success hr {
   border-top-color: #c9e2b3;

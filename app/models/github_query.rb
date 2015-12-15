@@ -1,22 +1,51 @@
-# require 'Octokit'
-# require 'base64'
-# require 'json'
-
 class GithubQuery
-attr_reader :github_client, :code_query_results, :user_id
+attr_reader :github_client, :code_query_results, :user_id, :user
 
   def initialize(user_id)
     @user_id = user_id
+    @user = User.find(user_id)
     @github_client = request_github_client
   end
 
   def request_github_client
-    user = User.find(user_id)
-    Octokit::Client.new(:access_token => user.access_token)
+    Octokit::Client.new(:access_token => user.access_token, auto_traversal: true, per_page: 100)
   end
 
-  def user_code_search(string)
-    @code_query_results = github_client.search_code("#{string} user:#{github_client.login}", options = {})
+  def user_code_search(string, *path)
+    Octokit.auto_paginate = true
+    if path.length > 0
+      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} user:#{github_client.login}", options = {})
+    else
+      @code_query_results = github_client.search_code("#{string} user:#{github_client.login}", options = {})
+    end
+  end
+
+  def repo_code_search(string, repo, *path)
+    Octokit.auto_paginate = true
+    if path.length > 0
+      @code_query_results = github_client.search_code("#{string} path:app/#{path[0]} repo:#{repo}", options = {})
+    else
+      # debugger
+      @code_query_results = github_client.search_code("#{string} repo:#{repo}", options = {})
+    end
+  end
+
+  def org_code_search(string)
+    Octokit.auto_paginate = true
+    github_client.search
+  end
+
+  def repository_search
+    Octokit.auto_paginate = true
+    repositories = []
+    github_client.repositories.each do |repo|
+      full_name = repo.full_name
+      repositories << full_name
+        # if github_client.commits("#{full_name}", 'master', {author: "#{user.name}"}).present?
+        #   repositories << full_name
+        # end
+    end
+    repositories
   end
 
   def search_output_urls
@@ -32,5 +61,4 @@ attr_reader :github_client, :code_query_results, :user_id
   def query_to_json(search_output_urls)
     {search_output_urls: search_output_urls}.to_json
   end
-
 end
