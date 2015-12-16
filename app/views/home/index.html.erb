@@ -33,12 +33,16 @@
   </div> -->
 
   <div id="search-function">
-    <form id="create-collection" ng-submit="submitCollection()">
-      <h4>Start a Collection:</h4>
-      <input class="form-control" type="text" placeholder="Collection Name" ng-model="collection">
-      <input class="btn btn-default" type="submit" value="Submit" ng-click="showSearchInfo = false">
-    </form>
+    <div ng-show="showSearchInfo">
+      <form id="create-collection" ng-submit="submitCollection()">
+        <h4>Start a Collection:</h4>
+        <input class="form-control" type="text" placeholder="Collection Name" ng-model="collection">
+        <input class="btn btn-default" type="submit" value="Submit" ng-click="showSearchInfo = false">
+      </form>
+    </div>
+
     <div ng-hide="showSearchInfo">
+      <h2> Your Collection: <a href="/collections/{{newCollectionID}}"> {{ collection }} </a></h2>
       <form id="keyword-search" ng-submit="submit()" >
         <h4>Search by keyword:</h4>
         <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
