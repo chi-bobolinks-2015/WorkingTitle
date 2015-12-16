@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   def create
     collection = Collection.create(name: collection_params[:collectionName], user_id: current_user.id)
-    session[:collection_name] = collection.name
+    session[:collection_id] = collection.id
     respond_to do |format|
       format.json { render json: collection }
     end
