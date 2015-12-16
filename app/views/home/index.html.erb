@@ -59,13 +59,15 @@
             <input type="hidden" ng-model="searchResult.path">
             <p>Path: {{searchResult.path}}</p>
             <p>Path: {{searchResult.url}}</p>
-            <button class="glyphicon glyphicon-plus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path)"></button>
+            <button ng-hide="class" class="glyphicon glyphicon-plus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); changeClass()"></button>
+            <span class="glyphicon glyphicon-ok" ng-show="class"></span>
             <pre class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>
           </p>
         </div>
       </div>
+      <!-- ADD BUTTON TO CURRENT COLLECTION SHOW -->
     </div>
   </div>
 

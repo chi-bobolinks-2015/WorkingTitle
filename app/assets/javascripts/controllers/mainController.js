@@ -29,13 +29,20 @@ var app = angular.module('sift', []);
       console.log("Selected URL************************** " + selectedUrl)
       console.log("Selected Raw Code************************** " + selectedRawCode)
       console.log("Selected path************************** " + selectedPath)
+
       var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID, codeContent: selectedRawCode, codePath: selectedPath }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
+          $scope.changeClass();
         })
     }
 
     $scope.showSearchInfo = function() {
       $scope.showSearchInfo = true;
+    }
+
+    $scope.changeClass = function() {
+      $scope.class = true;
+      console.log("YOU GOT HERE!@!!!");
     }
   }])
