@@ -7,6 +7,13 @@ class CodeSnippetsController < ApplicationController
     end
   end
 
+  def destroy
+    @code_snippet = CodeSnippet.find(params[:id])
+    @collection = Collection.find(@code_snippet.collection_id)
+    @code_snippet.destroy
+    redirect_to @collection
+  end
+
   private
 
   def snippet_params

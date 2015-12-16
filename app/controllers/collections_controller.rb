@@ -12,6 +12,12 @@ class CollectionsController < ApplicationController
     @code_snippets = CodeSnippet.where(collection_id: params[:id])
   end
 
+  def delete
+    @collection = Collection.find(params[:id])
+    @collection.destroy
+    redirect_to home_path
+  end
+
   private
 
   def collection_params
