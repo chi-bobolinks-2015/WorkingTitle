@@ -1,0 +1,15 @@
+#collection-show span {
+  font-size: .7em;
+}
+
+#collection-show span a:hover {
+  text-decoration: none;
+}
+
+#collection-show #remove {
+  font-size: 2em;
+}
+
+#collection-show #remove a:hover {
+  text-decoration: none;
+}
