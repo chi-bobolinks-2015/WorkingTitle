@@ -145,7 +145,7 @@ input::-moz-focus-inner {
   border: 0;
 }
 input {
-  line-height: normal;
+  line-height: 1.5em;
 }
 input[type="checkbox"],
 input[type="radio"] {
@@ -264,11 +264,7 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
-  font-family: 'Glyphicons Halflings';
 
-  src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -2493,7 +2489,7 @@ input[type="search"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 4px 0 0;
+  margin: 4px -10px 0 0;
   margin-top: 1px \9;
   line-height: normal;
 }
@@ -2525,9 +2521,9 @@ output {
 .form-control {
   display: block;
   width: 20%;
-  height: 34px;
+  height: 40px;
   padding: 6px 12px;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1.42857143;
   color: #555;
   background-color: #fff;
@@ -2978,10 +2974,10 @@ select[multiple].input-lg {
 }
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 8px 15px;
   margin-bottom: 0;
-  font-size: 14px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;

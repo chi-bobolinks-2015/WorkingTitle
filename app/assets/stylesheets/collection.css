@@ -1,5 +1,6 @@
 #collection-show span {
   font-size: .7em;
+  text-decoration: none;
   /*color: #4AA182;*/
 }
 
@@ -9,6 +10,7 @@
 
 #collection-show #remove {
   font-size: 2em;
+  text-decoration: none;
 }
 
 #collection-show #remove a:hover {

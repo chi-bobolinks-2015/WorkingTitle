@@ -28,7 +28,10 @@ html {
 
 #about {
   text-align: center;
-  padding: 4em 1em 4em 1em;
+  line-height: 2em;
+  padding: 8em 2em 8em 2em;
+  width: 90%;
+  margin: 0 auto;
 }
 
 #about h3 {
@@ -51,6 +54,15 @@ form#create-collection {
   margin-bottom: .5em;
 }
 
+#red {
+  color: #FF0000;
+  font-size: .75em;
+}
+
+form#create-collection h4 {
+  font-size: 2em;
+}
+
 div#populate-repos {
   width: 556px;
   height: 580px;
@@ -69,7 +81,8 @@ div#keyword-search {
 
 div#mvc {
   padding-top: 1em;
-  word-spacing: .3em;
+  word-spacing: .4em;
+  font-size: 1.5em;
 }
 
 span#copyright {
@@ -84,11 +97,6 @@ div#search-function {
   left: 3em;
 }
 
-#red {
-  color: #FF0000;
-  font-size: .9em;
-}
-
 #footer {
   position: relative;
   clear: both;
@@ -99,4 +107,11 @@ div#search-function {
 .codeDisplay {
   width: 60%;
   max-height: 500px;
+}
+
+#select {
+  font-style: italic;
+  font-weight: bold;
+  font-size: .8em;
+  line-height: .2em;
 }
