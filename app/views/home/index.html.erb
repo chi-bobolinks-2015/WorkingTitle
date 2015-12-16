@@ -67,13 +67,16 @@
             <p>{{searchResult.error}}</p>
             <p>Path: {{searchResult.path}}</p>
             <p>Url: {{searchResult.url}}</p>
-            <button class="glyphicon glyphicon-plus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path)"></button>
+              <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
+              <button class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
+
             <pre class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>
           </div>
         </div>
       </div>
+      <!-- ADD BUTTON TO CURRENT COLLECTION SHOW -->
     </div>
   </div>
 
