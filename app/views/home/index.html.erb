@@ -54,10 +54,12 @@
       <div ng-repeat ="searchCollection in searchResults">
         <div ng-repeat="searchResult in searchCollection">
           <p>
-            <input type="hidden" ng-model="url">
+            <input type="hidden" ng-model="searchResult.url">
+            <input type="hidden" ng-model="searchResult.raw_code">
+            <input type="hidden" ng-model="searchResult.path">
             <p>Path: {{searchResult.path}}</p>
             <p>Path: {{searchResult.url}}</p>
-            <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
+            <button class="glyphicon glyphicon-plus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path)"></button>
             <pre class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>
