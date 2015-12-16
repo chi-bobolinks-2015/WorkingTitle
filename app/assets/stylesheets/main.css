@@ -93,4 +93,5 @@ div#search-function {
 
 .codeDisplay {
   width: 60%;
+  max-height: 500px;
 }
