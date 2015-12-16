@@ -23,6 +23,9 @@ class Api::GithubQueriesController < ApplicationController
       query_results = client.user_code_search(params[:keyword], paths[0])
     end
     formatted_results = client.format_search(query_results)
+    if formatted_results.length == 0
+      formatted_results << {error: "No Results Found"}
+    end
     render json: { formatted_results: formatted_results }
   end
 
