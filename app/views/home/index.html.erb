@@ -45,6 +45,7 @@
       <h2>Your Collection: <a href="/collections/{{newCollectionID}}"> {{ collection }} </a></h2>
       <form id="keyword-search" ng-submit="submit()" >
         <h4>Search by keyword:</h4>
+          <p id="select">(search by at least one of the options below)</p>
         <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
         <div id="mvc">
           <label><input type="checkbox" ng-model="checkboxModel.models" value="app/models"> Model</label>
