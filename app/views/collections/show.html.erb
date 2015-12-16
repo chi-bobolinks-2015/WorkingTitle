@@ -1,17 +1,20 @@
-<% if current_user %>
-  <%= link_to 'Delete Collection', @collection, method: :delete %>
-<% end %>
-<h1>Collection: <%= @collection.name %></h1>
-<% @code_snippets.each do |code_snippet| %>
-  <p><h3>Github Path: </h3><%= code_snippet.path %></p>
-  <p><h3>Github Url: </h3>
-    <p><a href="<%= code_snippet.code_url %>"><%= code_snippet.code_url %></a></p>
-  <h3>Code Content: </h3>
-  <% if current_user %>
-    <%= link_to 'Delete from Collection', code_snippet, method: :delete %>
+<div id="collection-show">
+  <h1>Collection: <%= @collection.name %><span><%= link_to " <span class=\"glyphicon glyphicon-trash\"></span>".html_safe, @collection, method: :delete %></span></h1>
+
+  <% @code_snippets.each do |code_snippet| %>
+    <p><h3>Github Path: </h3><%= code_snippet.path %></p>
+
+    <p><h3>Github Url: </h3>
+      <p><a href="<%= code_snippet.code_url %>"><%= code_snippet.code_url %></a></p>
+
+    <h3>Code Content: </h3>
+    <span id="remove"><%= link_to " <span class=\"glyphicon glyphicon-remove\"></span>".html_safe, code_snippet, method: :delete %></span>
+
+    <pre class="codeDisplay"><code>
+      <label><%= code_snippet.code_content %></label>
+    </code></pre>
+    <br>
+
   <% end %>
-  <pre class="codeDisplay"><code>
-    <label><%= code_snippet.code_content %></label>
-  </code></pre>
-  <br>
-<% end %>
+
+</div>
