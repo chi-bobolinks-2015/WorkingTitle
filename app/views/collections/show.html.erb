@@ -1,6 +1,11 @@
 <h1>Collection: <%= @collection.name %></h1>
 <% @code_snippets.each do |code_snippet| %>
-  <p><h3>Github Url: </h3><%= code_snippet.code_url %></p>
-  <p><h3>Code Content: </h3><%= code_snippet.code_content %></p>
+  <p><h3>Github Path: </h3><%= code_snippet.path %></p>
+  <p><h3>Github Url: </h3>
+    <p><a href="<%= code_snippet.code_url %>"><%= code_snippet.code_url %></a></p>
+  <h3>Code Content: </h3>
+  <pre class="codeDisplay"><code>
+    <label><%= code_snippet.code_content %></label>
+  </code></pre>
   <br>
 <% end %>

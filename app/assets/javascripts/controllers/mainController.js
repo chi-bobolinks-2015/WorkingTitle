@@ -29,7 +29,7 @@ var app = angular.module('sift', []);
       console.log("Selected URL************************** " + selectedUrl)
       console.log("Selected Raw Code************************** " + selectedRawCode)
       console.log("Selected path************************** " + selectedPath)
-      var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID }  } )
+      var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID, codeContent: selectedRawCode, codePath: selectedPath }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
         })
