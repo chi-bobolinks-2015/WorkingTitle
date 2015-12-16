@@ -24,11 +24,6 @@ var app = angular.module('sift', []);
         })
     }
     $scope.saveLink = function(selectedUrl, selectedRawCode, selectedPath) {
-      // console.log({ codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID }  })
-      // console.log($scope)
-      console.log("Selected URL************************** " + selectedUrl)
-      console.log("Selected Raw Code************************** " + selectedRawCode)
-      console.log("Selected path************************** " + selectedPath)
       var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID, codeContent: selectedRawCode, codePath: selectedPath }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
