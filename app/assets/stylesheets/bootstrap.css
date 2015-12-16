@@ -4954,11 +4954,11 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 2em 0 2em 0;
-  margin: 2em 0 5em 0;
+  padding: 2em;
+  margin: 0 auto;
   color: inherit;
-  background-color: #DDDAD6;
   text-align: center;
+  width: 75em;
 }
 .jumbotron h1,
 .jumbotron .h1 {

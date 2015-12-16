@@ -27,10 +27,15 @@ var app = angular.module('sift', []);
       var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID, codeContent: selectedRawCode, codePath: selectedPath }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
+          $scope.clickPlus;
         })
     }
 
     $scope.showSearchInfo = function() {
       $scope.showSearchInfo = true;
     }
+
+    $scope.clickPlus = function () {
+        $scope.clickedPlus = !$scope.clickedPlus;
+    };
   }])

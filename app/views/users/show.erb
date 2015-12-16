@@ -8,7 +8,6 @@
     <% if @collections %>
       <% @collections.each do |collection| %>
         <h4><a href="/collections/<%= collection.id %>"><%= collection.name %></a></h4>
-        <!-- make above links to collection show -->
       <% end %>
     <% else %>
       <h4>You haven't created a Collection yet!</h4>
