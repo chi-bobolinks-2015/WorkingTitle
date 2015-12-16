@@ -84,6 +84,11 @@ div#search-function {
   left: 3em;
 }
 
+#red {
+  color: #FF0000;
+  font-size: .9em;
+}
+
 #footer {
   position: relative;
   clear: both;
