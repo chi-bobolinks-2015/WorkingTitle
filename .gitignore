@@ -13,4 +13,4 @@
 /tmp
 /coverage
 .byebug_history
-/config/application.yml
+.env
