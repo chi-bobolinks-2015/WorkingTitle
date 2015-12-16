@@ -67,7 +67,7 @@
             <input type="hidden" ng-model="searchResult.path">
             <p>{{searchResult.error}}</p>
             <p>Path: {{searchResult.path}}</p>
-            <p>Url: {{searchResult.url}}</p>
+            <p>Url: <a href="{{searchResult.url}}">{{searchResult.url}}</a></p>
               <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
               <button class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
 
