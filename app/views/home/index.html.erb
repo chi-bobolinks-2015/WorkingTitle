@@ -53,15 +53,15 @@
     <div ng-controller="mainController">
       <div ng-repeat ="searchCollection in searchResults">
         <div ng-repeat="searchResult in searchCollection">
-          <p>
+          <div>
             <input type="hidden" ng-model="url">
-            <p>Path: {{searchResult.path}}</p>
-            <p>Path: {{searchResult.url}}</p>
+            <!-- <p>Path: {{searchResult.path}}</p> -->
+            <a href={{searchResult.url}}>{{searchResult.url}}</a>
             <button class="glyphicon glyphicon-plus" ng-click="saveLink(url)"></button>
             <pre class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>
-          </p>
+          </div>
         </div>
       </div>
     </div>
