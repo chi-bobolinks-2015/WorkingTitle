@@ -17,12 +17,13 @@
 <body>
   <nav class="navbar">
     <% if current_user %>
-      <a class="navbar-link" href="/api/logout">Logout</a>
+      <a class="navbar-link" href="/api/logout" title="log out"><span class="glyphicon glyphicon-log-out"></span></a>
+      <a class="navbar-link" href="/users/<%= current_user.id %>"><%= current_user.name %></a>
     <% else %>
       <a class="navbar-link" href="/api/login">Login</a>
     <% end %>
     <div class="navbar-header">
-      <h1 class="navbar-brand">Sift</h1>
+      <h1><a href="/">Sift</a></h1>
     </div>
   </nav>
   <div id="container" class="container">

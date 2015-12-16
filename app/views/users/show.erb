@@ -1,12 +1,17 @@
-<div>
-  <h1>Welcome to your profile page, <%= @user.name %></h1>
+<div id="profile-page" class="container-fluid">
+  <h1><%= @user.name %></h1>
 
   <div id="gh-avatar"><%= image_tag @user.avatar_url %></div>
 
   <div id="profile-collections">
-    <% @collections.each do |collection| %>
-      <h4><%= collection.name %></h4>
-      <!-- make above links to collection show -->
+    <h3>Current Collections:</h3>
+    <% if @collections %>
+      <% @collections.each do |collection| %>
+        <h4><a href="/collections/<%= collection.id %>"><%= collection.name %></a></h4>
+        <!-- make above links to collection show -->
+      <% end %>
+    <% else %>
+      <h4>You haven't created a Collection yet!</h4>
     <% end %>
   </div>
 </div>

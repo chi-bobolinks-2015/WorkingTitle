@@ -7,6 +7,17 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def show
+    @collection = Collection.find(params[:id])
+    @code_snippets = CodeSnippet.where(collection_id: params[:id])
+  end
+
+  def delete
+    @collection = Collection.find(params[:id])
+    @collection.destroy
+    redirect_to home_path
+  end
+
   private
 
   def collection_params

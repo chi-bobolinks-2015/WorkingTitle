@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20151214011800) do
     t.string   "code_url"
     t.text     "code_content"
     t.integer  "collection_id"
+    t.string   "path"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
