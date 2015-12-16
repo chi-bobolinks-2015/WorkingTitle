@@ -59,8 +59,8 @@
             <input type="hidden" ng-model="searchResult.path">
             <p>Path: {{searchResult.path}}</p>
             <p>Path: {{searchResult.url}}</p>
-            <button ng-hide="class" class="glyphicon glyphicon-plus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); changeClass()"></button>
-            <span class="glyphicon glyphicon-ok" ng-show="class"></span>
+              <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
+              <button class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
             <pre class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>

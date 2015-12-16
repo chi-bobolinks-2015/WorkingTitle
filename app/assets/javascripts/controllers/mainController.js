@@ -33,7 +33,7 @@ var app = angular.module('sift', []);
       var createCodeSnippet = $http.post('/codeSnippets.json', { codeSnippet: {codeUrl: selectedUrl, collectionId: $scope.newCollectionID, codeContent: selectedRawCode, codePath: selectedPath }  } )
         .success(function(createSnippet){
           $scope.snippet = createSnippet
-          $scope.changeClass();
+          $scope.clickPlus;
         })
     }
 
@@ -41,8 +41,7 @@ var app = angular.module('sift', []);
       $scope.showSearchInfo = true;
     }
 
-    $scope.changeClass = function() {
-      $scope.class = true;
-      console.log("YOU GOT HERE!@!!!");
-    }
+    $scope.clickPlus = function () {
+        $scope.clickedPlus = !$scope.clickedPlus;
+    };
   }])
