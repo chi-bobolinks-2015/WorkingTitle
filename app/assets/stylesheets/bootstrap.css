@@ -283,6 +283,7 @@ th {
 }
 .glyphicon-plus:before {
   content: "\002b";
+  color: #003366;
 }
 .glyphicon-minus:before {
   content: "\2212";
@@ -331,6 +332,7 @@ th {
 }
 .glyphicon-ok:before {
   content: "\e013";
+  color: #339900;
 }
 .glyphicon-remove:before {
   content: "\e014";
@@ -1066,12 +1068,10 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #4AA182;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #4AA182;
   text-decoration: none;
 
 }
@@ -1239,7 +1239,7 @@ h1,
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 38px;
 }
 h3,
 .h3 {
@@ -1247,7 +1247,7 @@ h3,
 }
 h4,
 .h4 {
-  font-size: 18px;
+  font-size: 24px;
 }
 h5,
 .h5 {
@@ -2520,8 +2520,9 @@ output {
 }
 .form-control {
   display: block;
-  width: 20%;
-  height: 40px;
+  margin: 0 auto;
+  width: 30%;
+  height: 45px;
   padding: 6px 12px;
   font-size: 20px;
   line-height: 1.42857143;

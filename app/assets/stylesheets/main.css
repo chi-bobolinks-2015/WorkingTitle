@@ -49,18 +49,21 @@ html {
   margin: 1em;
 }
 
-form#create-collection {
-  line-height: 3em;
-  margin-bottom: .5em;
-}
-
 #red {
   color: #FF0000;
   font-size: .75em;
 }
 
+form#create-collection {
+  line-height: 5em;
+  margin-bottom: .5em;
+  text-align: center;
+}
+
 form#create-collection h4 {
-  font-size: 2em;
+  margin: 0 auto;
+  font-size: 2.7em;
+  line-height: 1.3em;
 }
 
 div#populate-repos {
@@ -75,12 +78,11 @@ div#repo-search {
   line-height: 3em;
 }
 
-div#keyword-search {
-  line-height: 3em;
+#keyword-search {
+  line-height: 4em;
 }
 
 div#mvc {
-  padding-top: 1em;
   word-spacing: .4em;
   font-size: 1.5em;
 }
@@ -94,7 +96,20 @@ span#copyright {
 
 div#search-function {
   position: relative;
-  left: 3em;
+  text-align: center;
+}
+
+div#search-function a {
+  color: #003366;
+}
+
+div#search-function a:hover {
+  color: #0052A1;
+}
+
+#code-snippet {
+  margin: 0 auto;
+  text-align: left;
 }
 
 #footer {
@@ -114,4 +129,12 @@ div#search-function {
   font-weight: bold;
   font-size: .8em;
   line-height: .2em;
+}
+
+#error {
+  font-size: 2em;
+  color: #990000;
+  text-align: center;
+  font-style: italic;
+  padding-top: 1em;
 }
