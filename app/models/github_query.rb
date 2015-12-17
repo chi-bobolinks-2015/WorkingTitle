@@ -43,12 +43,14 @@ attr_reader :github_client, :user_id, :user
     search_results = []
     repo_object.items.each do |item|
       if item.path !~ /\/\./
-        hash = Hash.new
-        hash[:path] = item.path
-        hash[:raw_code] = get_request(item.git_url)
-        hash[:url] = item.html_url
-        search_results << hash
-        break if search_results.length == 10
+        if item.path !~ /images/
+          hash = Hash.new
+          hash[:path] = item.path
+          hash[:raw_code] = get_request(item.git_url)
+          hash[:url] = item.html_url
+          search_results << hash
+          break if search_results.length == 10
+        end
       end
     end
     search_results
