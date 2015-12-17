@@ -35,7 +35,7 @@
   <div id="search-function">
     <div ng-show="showSearchInfo">
       <form id="create-collection" ng-submit="submitCollection()">
-        <h4><a id="red">*</a>Start a Collection:</h4>
+        <h4><span id="red">*</span>Start a Collection:</h4>
         <input class="form-control" type="text" placeholder="Collection Name" ng-model="collection">
         <input class="btn btn-default" type="submit" value="Submit" ng-click="showSearchInfo = false">
       </form>
@@ -59,19 +59,18 @@
       <div ng-repeat ="searchCollection in searchResults">
         <div ng-repeat="searchResult in searchCollection">
           <div ng-if="searchResult.error">
-            <p>{{searchResult.error}}</p>
+            <p id="error">{{searchResult.error}}</p>
           </div>
           <div ng-if="searchResult.url">
             <input type="hidden" ng-model="searchResult.url">
             <input type="hidden" ng-model="searchResult.raw_code">
             <input type="hidden" ng-model="searchResult.path">
-            <p>{{searchResult.error}}</p>
             <p>Path: {{searchResult.path}}</p>
             <p>Url: <a href="{{searchResult.url}}">{{searchResult.url}}</a></p>
               <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
               <button class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
 
-            <pre class="codeDisplay"><code>
+            <pre id="code-snippet" class="codeDisplay"><code>
               <label>{{searchResult.raw_code}}</label>
             </code></pre>
           </div>
