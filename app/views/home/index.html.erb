@@ -61,13 +61,13 @@
           <div ng-if="searchResult.error">
             <p id="error">{{searchResult.error}}</p>
           </div>
-          <div ng-if="searchResult.url">
+          <div id="search-results" ng-if="searchResult.url">
             <input type="hidden" ng-model="searchResult.url">
             <input type="hidden" ng-model="searchResult.raw_code">
             <input type="hidden" ng-model="searchResult.path">
             <p id="url-path">Path: {{searchResult.path}}</p>
             <p id="url">Url: <a href="{{searchResult.url}}">{{searchResult.url}}</a></p>
-              <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
+              <span id="check" class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
               <button id="plus" class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
 
             <pre id="code-snippet" class="codeDisplay"><code>
