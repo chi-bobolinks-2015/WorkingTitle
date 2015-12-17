@@ -4,8 +4,8 @@
   <div id="gh-avatar"><%= image_tag @user.avatar_url %></div>
 
   <div id="profile-collections">
-    <h3>Current Collections:</h3>
     <% if @collections %>
+    <h3>Current Collections:</h3>
       <% @collections.each do |collection| %>
         <h4><a href="/collections/<%= collection.id %>"><%= collection.name %></a></h4>
       <% end %>
