@@ -138,3 +138,19 @@ div#search-function a:hover {
   font-style: italic;
   padding-top: 1em;
 }
+
+#plus {
+  right: 29%;
+  font-size: 1.2em;
+  border-radius: 7px;
+  background-color: aliceblue;
+  margin-bottom: 3px;
+}
+
+#url {
+  font-size: 1.5em;
+}
+
+#url-path {
+  font-size: 1.5em;
+}
