@@ -156,7 +156,7 @@ div#search-function a:hover {
   position: relative;
   top: 1em;
   right: 31%;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-top: -3px;
   margin-bottom: 3px;
   margin-right: 1em;
@@ -174,4 +174,35 @@ div#search-function a:hover {
   line-height: 1.5em;
   margin-top: 4em;
   margin-bottom: 2.5em;
+}
+
+#review {
+  font-size: 3em;
+  position: relative;
+  left: 39%;
+  top: 2em;
+}
+
+/* button effects */
+.hi-icon-effect-6 .hi-icon {
+	box-shadow: 0 0 0 4px rgba(255,255,255,1);
+	transition: background 0.2s, color 0.2s;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover {
+	background: rgba(255,255,255,1);
+	color: #64bb5d;
+}
+
+.no-touch .hi-icon-effect-6 .hi-icon:hover:before {
+	animation: spinAround 2s linear infinite;
+}
+
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }

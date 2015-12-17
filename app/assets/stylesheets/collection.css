@@ -9,10 +9,27 @@
 }
 
 #collection-show #remove {
-  font-size: 2em;
+  position: absolute;
   text-decoration: none;
+  font-size: 2.5em;
+  left: 55px;
+  bottom: 325px;
 }
 
 #collection-show #remove a:hover {
   text-decoration: none;
+}
+
+#collection-show h3 {
+  text-indent: .5em;
+}
+
+#prof-url {
+  font-size: 1.2em;
+  text-indent: 1em;
+}
+
+#prof-url-path {
+  font-size: 1.2em;
+  text-indent: 1em;
 }
