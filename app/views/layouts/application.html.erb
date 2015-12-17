@@ -20,7 +20,7 @@
       <a class="navbar-link" href="/api/logout" title="log out"><span class="glyphicon glyphicon-log-out"></span></a>
       <a class="navbar-link" href="/users/<%= current_user.id %>"><%= current_user.name %></a>
     <% else %>
-      <a class="navbar-link" href="/api/login">Login</a>
+      <a class="navbar-link" href="/api/login"><span class="glyphicon glyphicon-log-in"></span></a>
     <% end %>
     <div class="navbar-header">
       <h1><a href="/">Sift</a></h1>
