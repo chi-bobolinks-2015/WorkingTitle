@@ -285,6 +285,19 @@ th {
   content: "\002b";
   color: #003366;
 }
+.glyphicon-plus:hover {
+  animation: spinAround 2s linear infinite;
+}
+
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 .glyphicon-minus:before {
   content: "\2212";
 }
