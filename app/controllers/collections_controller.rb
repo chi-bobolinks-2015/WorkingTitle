@@ -7,7 +7,7 @@ class CollectionsController < ApplicationController
         format.json { render json: collection }
       end
     else
-      render json: { errors: collection.errors.full_messages }
+      render json: { errors: "collection.errors.full_messages" }
     end
   end
 

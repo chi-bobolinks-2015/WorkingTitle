@@ -20,7 +20,12 @@ var app = angular.module('sift', []);
     $scope.submitCollection = function() {
       var createCollection = $http.post('/collections.json', { collection: {collectionName: $scope.collection } } )
         .success(function(createCollection){
+          console.log(createCollection)
+          $scope.showSearchInfo = false
           $scope.newCollectionID = createCollection.id;
+        })
+        .error(function(createCollection){
+          $scope.collectionError = true;
         })
     }
     $scope.saveLink = function(selectedUrl, selectedRawCode, selectedPath) {
@@ -33,6 +38,7 @@ var app = angular.module('sift', []);
 
     $scope.showSearchInfo = function() {
       $scope.showSearchInfo = true;
+
     }
 
     $scope.clickPlus = function () {
