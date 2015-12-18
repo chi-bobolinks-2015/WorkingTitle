@@ -105,6 +105,7 @@ span#copyright {
   margin: 0 .5em 0 0;
   font-size: .7em;
   line-height: 2em;
+  padding-right: 1em;
 }
 
 div#search-function {
@@ -135,8 +136,9 @@ div#search-function a:hover {
 }
 
 .codeDisplay {
-  width: 60%;
+  width: 80%;
   max-height: 500px;
+  margin: auto;
 }
 
 #select {
@@ -157,7 +159,7 @@ div#search-function a:hover {
 #plus {
   position: relative;
   top: 1em;
-  right: 31%;
+  right: 41%;
   font-size: 1.2em;
   border-radius: 7px;
   background-color: aliceblue;
@@ -169,8 +171,8 @@ div#search-function a:hover {
 #check {
   position: relative;
   top: 1em;
-  right: 31%;
-  font-size: 1.5em;
+  right: 41%;
+  font-size: 1.2em;
   margin-top: -3px;
   margin-bottom: 3px;
   margin-right: 1em;
@@ -206,8 +208,10 @@ div#search-function a:hover {
 
 #sift-is p {
   text-align: center;
-  line-height: 
+  line-height: 1.5em;
+  font-weight: bold;
   font-size: 1.4em;
+  color: #4D505B;
 }
 
 input:hover {

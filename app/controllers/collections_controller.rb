@@ -7,11 +7,12 @@ class CollectionsController < ApplicationController
         format.json { render json: collection }
       end
     else
-      render json: { errors: collection.errors.full_messages }
+      render json: { errors: "collection.errors.full_messages" }
     end
   end
 
   def show
+    @user = User.find_by(id: session[:id])
     @collection = Collection.find(params[:id])
     @code_snippets = CodeSnippet.where(collection_id: params[:id])
   end

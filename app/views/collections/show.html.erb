@@ -1,25 +1,42 @@
-<div class="container-fluid" id="collection-show">
-  <h1>Collection: <%= @collection.name %>
-    <% if current_user %>
-      <span><%= link_to " <span class=\"glyphicon glyphicon-trash\"></span>".html_safe, @collection, method: :delete %></span>
+<div class="collection_right">
+  <div class="container-fluid" id="collection-show">
+    <h1>Collection: <%= @collection.name %>
+      <% if current_user %>
+        <span><%= link_to " <span class=\"glyphicon glyphicon-trash\"></span>".html_safe, @collection, method: :delete %></span>
+      <% end %>
+    </h1>
+
+    <% @code_snippets.each do |code_snippet| %>
+      <h3>Github Path: </h3>
+        <p id="prof-url-path"><%= code_snippet.path %></p>
+
+      <h3>Github Url: </h3>
+        <p id="prof-url"><a href="<%= code_snippet.code_url %>"><%= code_snippet.code_url %></a></p>
+
+      <h3>Code Content: </h3>
+      <% if current_user %>
+        <span id="remove"><%= link_to "<span class=\"glyphicon glyphicon-remove\"></span>".html_safe, code_snippet, method: :delete %></span>
+      <% end %>
+      <pre class="codeDisplay"><code>
+        <label><%= code_snippet.code_content %></label>
+      </code></pre>
+      <br>
+
     <% end %>
-  </h1>
 
-  <% @code_snippets.each do |code_snippet| %>
-    <h3>Github Path: </h3><p id="prof-url-path"><%= code_snippet.path %></p>
+  </div>
+</div>
 
-    <h3>Github Url: </h3>
-      <p id="prof-url"><a href="<%= code_snippet.code_url %>"><%= code_snippet.code_url %></a></p>
-
-    <h3>Code Content: </h3>
-    <% if current_user %>
-      <span id="remove"><%= link_to "<span class=\"glyphicon glyphicon-remove\"></span>".html_safe, code_snippet, method: :delete %></span>
-    <% end %>
-    <pre class="codeDisplay"><code>
-      <label><%= code_snippet.code_content %></label>
-    </code></pre>
-    <br>
-
-  <% end %>
-
+<div class="user_info">
+  <div class="user_info">
+    <div id="gh-avatar"><%= image_tag @collection.user.avatar_url %></div>
+    <h3>Coded By: <%= @collection.user.name %></h3>
+    <p>Email: <a href="mailto:<%= @collection.user.email %>"><%= @collection.user.email %></a></p>
+    <p>Github: <a href="<%= @collection.user.html_url %>"><%= @collection.user.html_url %></a></p>
+    <div class="wrapper">
+      <div id="border"></div>
+      <div class="clear"></div>
+    </div>
+    <!--wrapper-->
+  </div>
 </div>

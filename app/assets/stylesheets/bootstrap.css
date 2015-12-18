@@ -285,19 +285,6 @@ th {
   content: "\002b";
   color: #003366;
 }
-.glyphicon-plus:hover {
-  animation: spinAround 2s linear infinite;
-}
-
-@keyframes spinAround {
-	from {
-		transform: rotate(0deg)
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
 .glyphicon-minus:before {
   content: "\2212";
 }
@@ -782,7 +769,7 @@ th {
 }
 .glyphicon-log-out:before {
   content: "\e163";
-  padding-right: .5em;
+  padding-right: 1em;
 }
 .glyphicon-new-window:before {
   content: "\e164";
@@ -4168,7 +4155,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
-    padding-left: .5em;
+    padding-left: 1em;
   }
 }
 .navbar-collapse {
@@ -4971,6 +4958,7 @@ a.badge:focus {
   margin: 0 auto;
   color: inherit;
   text-align: center;
+  text-shadow: 1px 2px #000000;
   width: 75em;
 }
 .jumbotron h1,

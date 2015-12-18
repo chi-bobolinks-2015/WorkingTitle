@@ -1,6 +1,7 @@
 #gh-avatar img {
-  width: 13%;
+  width: 85%;
   height: auto;
+  border-radius: 15px;
 }
 
 #profile-page {
@@ -13,8 +14,69 @@
 
 #profile-collections {
   padding: 1em 0 0 0;
+  text-align: center;
 }
 
 #profile-collections a:hover {
   text-decoration: none;
+}
+
+/*Rich changes*/
+
+.profile_right{background-color: #eee;
+              width: 75%;
+              float: right;}
+
+.profile_left{width: 25%;
+              float: left;}
+
+.user_info{position: relative;
+          float: left;}
+
+.user_info h1{font-size: 36px;}
+
+.user_info p{font-size: 18px;}
+
+.explore_collections {margin: 0 auto;
+                    text-align: center;}
+
+.explore_collections h1 {font-size: 34px;}
+
+.explore_collections img{width: 200px;}
+
+.folder_icon {position: relative;
+             display: inline-block;
+             width: 200px;
+           }
+
+.folder_icon img {
+             margin: 0 auto;
+             max-height: 100%;
+             width: 95%;
+           }
+
+.folder_icon img:hover {
+  color: #4D505B;
+}
+
+.folder_icon a {font-size: 14px;
+                background-color: }
+
+.overlay {
+  position: absolute;
+  top: 65px;
+  left: 43px;
+  width: 57%;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.overlay:hover {
+  color: #4D505B;
+  font-weight: bolder;
+}
+
+.profile_wrapper {
+  padding: 3em;
 }
