@@ -24,16 +24,18 @@
     <% end %>
   </div>
 </div>
-<div class="user_info">
+<div class="collection_left">
   <div class="user_info">
-    <div id="gh-avatar"><%= image_tag @collection.user.avatar_url %></div>
-    <h3>Coded By: <%= @collection.user.name %></h3>
-    <p>Email: <a href="mailto:<%= @collection.user.email %>"><%= @collection.user.email %></a></p>
-    <p>Github: <a href="<%= @collection.user.html_url %>"><%= @collection.user.html_url %></a></p>
-    <div class="wrapper">
-      <div id="border"></div>
-      <div class="clear"></div>
+    <div class="user_info">
+      <div id="gh-avatar"><%= image_tag @collection.user.avatar_url %></div>
+      <h3>Coded By: <%= @collection.user.name %></h3>
+      <p>Email: <a href="mailto:<%= @collection.user.email %>"><%= @collection.user.email %></a></p>
+      <p>Github: <a href="<%= @collection.user.html_url %>"><%= @collection.user.html_url %></a></p>
+      <div class="wrapper">
+        <div id="border"></div>
+        <div class="clear"></div>
+      </div>
+      <!--wrapper-->
     </div>
-    <!--wrapper-->
   </div>
 </div>
