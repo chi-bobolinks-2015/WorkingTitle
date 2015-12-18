@@ -78,7 +78,7 @@ form#create-collection h4 {
   line-height: 1.3em;
 }
 
-form#create-collection input[type=text] {
+input[type=text] {
   width: 30%;
 }
 
