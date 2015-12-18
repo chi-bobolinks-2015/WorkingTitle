@@ -16,3 +16,21 @@
 #collection-show #remove a:hover {
   text-decoration: none;
 }
+
+/*Rich changes*/
+
+.collection_right{background-color: #eee;
+                  width: 75%;
+                  float: right;}
+
+#collection-show h1{position: relative;
+                    left: 120px;}
+
+#collection-show h3{position: relative;
+                  left: 120px;}
+
+#collection-show p{position: relative;
+                  left: 120px;}
+
+#remove{position: relative;
+                  left: 120px;}
