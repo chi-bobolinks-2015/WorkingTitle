@@ -1,36 +1,30 @@
-<div ng-controller="mainController">
-  <div class="jumbotron">
-    <h1>Welcome to sift</h1>
-  </div>
-
-  <div id="about">
-    <div class="row">
-      <div class="col-md-6"><h3>What is sift?</h3></div>
-      <div class="col-md-6"><h3>How does it work?</h3></div>
+<div id="container" class="container">
+  <div ng-controller="mainController">
+  <div id="welcome">
+    <div class="jumbotron">
+      <h1>Welcome to sift</h1>
     </div>
-    <div class="row">
-      <div class="col-md-6"><p>Sift allows you to access your Github repositories, save snippets of code and store them in a convenient collection. Refer to your saved collections and easily reference important code you saved in the past.</p></div>
-      <div class="col-md-6"><p>Login to your Github account by clicking "Login" at the top of the page. Now you can start a collection of code snippets! Name your collection and click submit. Enter your search criteria and hit submit. </p></div>
+    <div id="sift-is">
+      <p>Sift allows you to access your Github repositories to save specific code & store them in a convenient collection. Refer to your saved collections and easily reference important code you saved in the past.</p>
     </div>
   </div>
+  <% if current_user %>
 
-<% if current_user %>
-
-<!--   <div id="navbar-left" class="navbar-left">
-    <form ng-submit="populateRepositories()">
-      <h4>Your Repositories</h4>
-      <input class="btn btn-default" type="submit" value="Populate!">
-    </form>
-    <div ng-controller="mainController">
-      <div id="populate-repos">
-        <div ng-repeat="repoCollection in repositories">
-          <div ng-repeat="repository in repoCollection">
-            {{repository}}
+  <!--   <div id="navbar-left" class="navbar-left">
+      <form ng-submit="populateRepositories()">
+        <h4>Your Repositories</h4>
+        <input class="btn btn-default" type="submit" value="Populate!">
+      </form>
+      <div ng-controller="mainController">
+        <div id="populate-repos">
+          <div ng-repeat="repoCollection in repositories">
+            <div ng-repeat="repository in repoCollection">
+              {{repository}}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div> -->
+    </div> -->
 
   <div id="search-function">
     <div ng-show="showSearchInfo">
@@ -44,47 +38,60 @@
       </form>
     </div>
 
-    <div ng-hide="showSearchInfo">
-      <h2>Your Collection: <a href="/collections/{{newCollectionID}}"> {{ collection }} </a></h2>
-      <form id="keyword-search" ng-submit="submit()" >
-        <h4>Search by keyword:</h4>
-          <p id="select">(search by at least one of the options below)</p>
-        <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
-        <div id="mvc">
-          <label><input type="checkbox" ng-model="checkboxModel.models" value="app/models"> Model</label>
-          <label><input type="checkbox" ng-model="checkboxModel.views" value="app/views"> View</label>
-          <label><input type="checkbox" ng-model="checkboxModel.controllers" value="app/controllers"> Controller</label>
-          <input class="btn btn-default" type="submit" value="Submit">
-        </div>
-      </form>
-    </div>
-    <div ng-controller="mainController">
-      <div ng-repeat ="searchCollection in searchResults">
-        <div ng-repeat="searchResult in searchCollection">
-          <div ng-if="searchResult.error">
-            <p id="error">{{searchResult.error}}</p>
+      <div ng-hide="showSearchInfo">
+        <h2>Your Collection: <a href="/collections/{{newCollectionID}}"> {{ collection }} </a></h2>
+        <form id="keyword-search" ng-submit="submit()" >
+          <h4>Search by keyword:</h4>
+            <p id="select">(search by at least one of the options below)</p>
+          <input type="text" placeholder="Enter keywords" ng-model="keyword" class="form-control">
+          <div id="mvc">
+            <label><input type="checkbox" ng-model="checkboxModel.models" value="app/models"> Model</label>
+            <label><input type="checkbox" ng-model="checkboxModel.views" value="app/views"> View</label>
+            <label><input type="checkbox" ng-model="checkboxModel.controllers" value="app/controllers"> Controller</label>
+            <input class="btn btn-default" type="submit" value="Submit">
           </div>
-          <div ng-if="searchResult.url">
-            <input type="hidden" ng-model="searchResult.url">
-            <input type="hidden" ng-model="searchResult.raw_code">
-            <input type="hidden" ng-model="searchResult.path">
-            <p>Path: {{searchResult.path}}</p>
-            <p>Url: <a href="{{searchResult.url}}">{{searchResult.url}}</a></p>
-              <span class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
-              <button class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
-
-            <pre id="code-snippet" class="codeDisplay"><code>
-              <label>{{searchResult.raw_code}}</label>
-            </code></pre>
+        </form>
+      </div>
+      <div ng-controller="mainController">
+        <div ng-repeat ="searchCollection in searchResults">
+          <div ng-repeat="searchResult in searchCollection">
+            <div ng-if="searchResult.error">
+              <p id="error">{{searchResult.error}}</p>
+            </div>
+            <div id="search-results" ng-if="searchResult.url">
+              <input type="hidden" ng-model="searchResult.url">
+              <input type="hidden" ng-model="searchResult.raw_code">
+              <input type="hidden" ng-model="searchResult.path">
+              <p id="url-path">Path: {{searchResult.path}}</p>
+              <p id="url">Url: <a href="{{searchResult.url}}">{{searchResult.url}}</a></p>
+                <span id="check" class="glyphicon glyphicon-ok" ng-show="clickedPlus"></span>
+                <button id="plus" class="glyphicon glyphicon-plus" ng-hide="clickedPlus" ng-click="saveLink(searchResult.url, searchResult.raw_code, searchResult.path); clickedPlus = !clickedPlus"></button>
+              <pre id="code-snippet" class="codeDisplay"><code>
+                <label>{{searchResult.raw_code}}</label>
+              </code></pre>
+            </div>
           </div>
+          <a href="/collections/{{newCollectionID}}" id="review"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
         </div>
-      <a href="/collections/{{newCollectionID}}"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
       </div>
     </div>
+
+  <% else %>
+
+  <% end %>
+
   </div>
+</div>
 
-<% else %>
-
-<% end %>
-
+<div id="about">
+  <div class="image-row">
+    <div class="col-md-4"><img src="assets/one-vector.png" alt="one" height="175" width="175"></div>
+    <div class="col-md-4"><img src="assets/two-vector.png" alt="two" height="175" width="175"></div>
+    <div class="col-md-4"><img src="assets/three-vector.png" alt="three" height="175" width="175"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"><p>Login to your Github account by logging in at the top of the page.</p></div>
+    <div class="col-md-4"><p>Name your new collection to fill with code snippets and enter your search criteria.</p></div>
+    <div class="col-md-4"><p>Select the code snippets you want to include in your final collection, review your collection, and then you're ready to sift!</p></div>
+  </div>
 </div>

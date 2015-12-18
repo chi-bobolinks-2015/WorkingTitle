@@ -9,31 +9,58 @@
 }
 
 #collection-show #remove {
-  font-size: 2em;
+  position: absolute;
   text-decoration: none;
+  font-size: 2.5em;
+  left: 25px;
 }
 
 #collection-show #remove a:hover {
   text-decoration: none;
 }
 
+#collection-show h3 {
+  text-indent: .5em;
+}
+
+#prof-url {
+  font-size: 1.2em;
+  text-indent: 1em;
+}
+
+#prof-url-path {
+  font-size: 1.2em;
+  text-indent: 1em;
+}
+
 /*Rich changes*/
+.collection_right {
+  background-color: #eee;
+  width: 75%;
+  float: right;
+}
 
-.collection_right{background-color: #eee;
-                  width: 75%;
-                  float: right;}
+.collection_left {
+  width: 25%;
+  float: left;
+}
 
-.collection_left{width: 25%;
-                float: left;}
+#collection-show h1 {
+  position: relative;
+  left: 120px;
+}
 
-#collection-show h1{position: relative;
-                    left: 120px;}
+#collection-show h3 {
+  position: relative;
+  left: 120px;
+}
 
-#collection-show h3{position: relative;
-                  left: 120px;}
+#collection-show p {
+  position: relative;
+  left: 120px;
+}
 
-#collection-show p{position: relative;
-                  left: 120px;}
-
-#remove{position: relative;
-                  left: 120px;}
+#remove {
+  position: relative;
+  left: 120px;
+}

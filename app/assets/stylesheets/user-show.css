@@ -55,14 +55,28 @@
              width: 95%;
            }
 
+.folder_icon img:hover {
+  color: #4D505B;
+}
+
 .folder_icon a {font-size: 14px;
                 background-color: }
 
-.overlay {position: absolute;
-          top: 65px;
-          left: 43px;
-          width: 57%;
-          color: black;
-          font-weight: bold;
-          font-size: 20px;
+.overlay {
+  position: absolute;
+  top: 65px;
+  left: 43px;
+  width: 57%;
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.overlay:hover {
+  color: #4D505B;
+  font-weight: bolder;
+}
+
+.profile_wrapper {
+  padding: 3em;
 }
