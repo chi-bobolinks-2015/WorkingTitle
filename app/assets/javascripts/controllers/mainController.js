@@ -5,7 +5,6 @@ var app = angular.module('sift', []);
       var paths = $scope.checkboxModel
       var urls = $http.get('/api/search', { params: { keyword: $scope.keyword, paths: $scope.checkboxModel } })
       .success(function(searchResults){
-        console.log(searchResults)
         $scope.searchResults = searchResults
       })
     }
@@ -20,7 +19,6 @@ var app = angular.module('sift', []);
     $scope.submitCollection = function() {
       var createCollection = $http.post('/collections.json', { collection: {collectionName: $scope.collection } } )
         .success(function(createCollection){
-          console.log(createCollection)
           $scope.showSearchInfo = false
           $scope.newCollectionID = createCollection.id;
         })

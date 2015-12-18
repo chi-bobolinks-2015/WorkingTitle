@@ -30,8 +30,11 @@
 .profile_left{width: 25%;
               float: left;}
 
-.user_info{position: relative;
-          float: left;}
+.user_info {
+  position: relative;
+  float: left;
+  padding: 2em;
+}
 
 .user_info h1{font-size: 36px;}
 
@@ -44,10 +47,12 @@
 
 .explore_collections img{width: 200px;}
 
-.folder_icon {position: relative;
-             display: inline-block;
-             width: 200px;
-           }
+.folder_icon {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  margin: 2em;
+}
 
 .folder_icon img {
              margin: 0 auto;
