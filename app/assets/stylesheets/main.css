@@ -78,6 +78,10 @@ form#create-collection h4 {
   line-height: 1.3em;
 }
 
+form#create-collection input[type=text] {
+  width: 30%;
+}
+
 div#populate-repos {
   width: 556px;
   height: 580px;
