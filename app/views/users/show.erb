@@ -1,16 +1,41 @@
-<div id="profile-page" class="container-fluid">
-  <h1><%= @user.name %></h1>
-
-  <div id="gh-avatar"><%= image_tag @user.avatar_url %></div>
-
-  <div id="profile-collections">
-    <% if @collections %>
-    <h3>Current Collections:</h3>
-      <% @collections.each do |collection| %>
-        <h4><a href="/collections/<%= collection.id %>"><%= collection.name %></a></h4>
-      <% end %>
-    <% else %>
-      <h4>You haven't created a Collection yet!</h4>
-    <% end %>
+<div class="profile_wrapper">
+  <div class="profile_right">
+    <div class="explore_collections">
+      <img src="/assets/inspecto_cat.png">
+      <h1>Explore Your Current Collections</h1>
+    </div>
+    <div id="profile-page" class="container-fluid">
+      <div id="profile-collections">
+        <% if @collections %>
+          <% @collections.each do |collection| %>
+          <div class="folder_icon">
+            <a href="/collections/<%= collection.id %>">
+              <img src="/assets/collection_icon.png">
+            <div class="overlay">
+              <%= collection.name %>
+            </div>
+            </a>
+          </div>
+          <% end %>
+        <% else %>
+          <h4>You haven't created a Collection yet!</h4>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="profile_left">
+    <div class="user_info">
+      <div id="gh-avatar"><%= image_tag @user.avatar_url %></div>
+      <h1><%= @user.name %></h1>
+      <p>Number of Collections: <%= @user.collections.length %></p>
+      <p>Member Since: <%= @user.created_at.strftime("%m/%d/%Y") %></p>
+      <p>Email: <a href="mailto:<%= @user.email %>"><%= @user.email %></a></p>
+      <p>Github: <a href="<%= @user.html_url %>"><%= @user.html_url %></a></p>
+      <div class="wrapper">
+        <div id="border"></div>
+        <div class="clear"></div>
+      </div>
+      <!--wrapper-->
+    </div>
   </div>
 </div>
