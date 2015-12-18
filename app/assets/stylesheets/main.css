@@ -28,7 +28,7 @@ body {
 
 #container {
   width: 100%;
-  padding: 5em;
+  padding: 6em;
 }
 
 #welcome {
@@ -38,7 +38,7 @@ body {
 #about {
   text-align: center;
   line-height: 2em;
-  padding: 6em 2em 4em 2em;
+  padding: 6em 2em 5em 2em;
   width: 100%;
   margin: 0 auto;
   background-color: #DDDAD6;

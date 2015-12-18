@@ -1,7 +1,7 @@
 <div class="profile_wrapper">
   <div class="profile_right">
     <div class="explore_collections">
-      <img src="/assets/inspecto_cat.png">
+      <img src="<%= asset_path('inspecto_cat.png') %>">
       <h1>Explore Your Current Collections</h1>
     </div>
     <div id="profile-page" class="container-fluid">
@@ -10,7 +10,7 @@
           <% @collections.each do |collection| %>
           <div class="folder_icon">
             <a href="/collections/<%= collection.id %>">
-              <img src="/assets/collection_icon.png">
+              <img src="<%= asset_path('collection_icon.png') %>">
             <div class="overlay">
               <%= collection.name %>
             </div>
