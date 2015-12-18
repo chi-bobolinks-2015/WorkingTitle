@@ -265,7 +265,7 @@ th {
   }
 }
 
-}
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -775,12 +775,14 @@ th {
 }
 .glyphicon-log-in:before {
   content: "\e161";
+  padding-left: .5em;
 }
 .glyphicon-flash:before {
   content: "\e162";
 }
 .glyphicon-log-out:before {
   content: "\e163";
+  padding-right: .5em;
 }
 .glyphicon-new-window:before {
   content: "\e164";
@@ -1070,7 +1072,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #DDDAD6;
+  background-color: #eee;
 }
 input,
 button,
@@ -4154,7 +4156,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   min-height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: -20px;
   border: 1px solid transparent;
   background-color: #4D505B;
 }
@@ -4166,6 +4168,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .navbar-header {
     float: left;
+    padding-left: .5em;
   }
 }
 .navbar-collapse {

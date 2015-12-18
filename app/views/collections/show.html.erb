@@ -1,4 +1,4 @@
-<div id="collection-show">
+<div class="container-fluid" id="collection-show">
   <h1>Collection: <%= @collection.name %>
     <% if current_user %>
       <span><%= link_to " <span class=\"glyphicon glyphicon-trash\"></span>".html_safe, @collection, method: :delete %></span>
