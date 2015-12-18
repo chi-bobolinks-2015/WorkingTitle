@@ -23,6 +23,9 @@
                   width: 75%;
                   float: right;}
 
+.collection_left{width: 25%;
+                float: left;}
+
 #collection-show h1{position: relative;
                     left: 120px;}
 
