@@ -1,12 +1,12 @@
-**Sift**
+*Sift*
 
 Team members : David O'Keefe, Lauren Markzon, Angela Dyrda, Matt Leo, Rich Leo
 
-**Summary**
+*Summary*
 
 Sift is an application that allows developers to curate code samples from their GitHub repositories. Developed with an Angular-JS front end and a Rails back end, this app leverages the GitHub API to simplify advanced search options so developers can quickly and easily sift through their code.
 
-**Technology**
+*Technology*
 
 Rails Back-end
 Angular
@@ -15,7 +15,7 @@ Github API
 Octokit
 
 
-**Instructions**
+*Instructions*
 
 Using Sift requires a user to login to the application with their Github credentials.
 Once singed in, a form will appear asking a user to start a collection by naming it.
