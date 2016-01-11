@@ -60,7 +60,10 @@
   left: 120px;
 }
 
-#remove {
+#collection-show #remove {
   position: relative;
-  left: 120px;
+  text-decoration: none;
+  font-size: 2.5em;
+  left: 2em;
+  top: 1em;
 }
