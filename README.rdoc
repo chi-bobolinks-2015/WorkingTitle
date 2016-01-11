@@ -1,28 +1,29 @@
-== README
+**Sift**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Team members : David O'Keefe, Lauren Markzon, Angela Dyrda, Matt Leo, Rich Leo
 
-Things you may want to cover:
+**Summary**
 
-* Ruby version
+Sift is an application that allows developers to curate code samples from their GitHub repositories. Developed with an Angular-JS front end and a Rails back end, this app leverages the GitHub API to simplify advanced search options so developers can quickly and easily sift through their code.
 
-* System dependencies
+**Technology**
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails Back-end
+Angular
+Oauth2
+Github API
+Octokit
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+**Instructions**
+
+Using Sift requires a user to login to the application with their Github credentials.
+Once singed in, a form will appear asking a user to start a collection by naming it.
+
+After a collection is created, the user will be able to search for code by typing in a keyword. Another way to filter the search is by checking if model, view, or controller are found in the path name (Check only one of those at a time).
+
+Once the form is submitted, code snippets that meet the search criteria will populate and any number of code snippets can be added to a collection by clicking the plus sign. Start a new search and continue adding to that same collection!
+
+When you are done, click on your name at the top of the page to go to your personal portfolio page. Here, you will find all of your collections and the code samples they contain.
+
+Click on a specific collection and send that URL to anyone you would like. They will receive it as a read-only version. 
