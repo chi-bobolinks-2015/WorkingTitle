@@ -9,10 +9,11 @@
 }
 
 #collection-show #remove {
-  position: absolute;
+  position: relative;
   text-decoration: none;
   font-size: 2.5em;
-  left: 17em;
+  left: 2em;
+  top: 1em;
 }
 
 #collection-show #remove a:hover {
@@ -47,20 +48,15 @@
 
 #collection-show h1 {
   position: relative;
-  left: 120px;
+  /*left: 120px;*/
 }
 
 #collection-show h3 {
   position: relative;
-  left: 120px;
+  /*left: 120px;*/
 }
 
 #collection-show p {
   position: relative;
-  left: 120px;
-}
-
-#remove {
-  position: relative;
-  left: 120px;
+  /*left: 120px;*/
 }
